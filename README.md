@@ -5,10 +5,10 @@ Route LLM calls **by task type** across **Gemini**, **OpenRouter** and **local O
 A small standalone implementation of the routing-and-failover approach I use in a 7-agent generative-AI advertising agency system, where each agent type gets its own model chain and most heavy work runs on local models to keep API costs low. This repo is written from scratch as an independent tool; it does not contain code from that project.
 
 ## Features
-- **Task-based routing** — each task type (`copywriting`, `code`, …) has its own ordered chain of `provider:model` targets, plus a `default` chain.
-- **Failover** — HTTP 429 (quota), 5xx, timeouts, connection errors, unknown models, missing or invalid API keys → next target. A genuinely malformed request (other HTTP 400s) stops immediately instead of burning through every provider.
-- **Rate-limit cooldown** — a target that returned 429 is skipped until its `Retry-After` (or 60 s) expires.
-- **Attempt log** — every result says which targets were tried and why each failed.
+- **Task-based routing**: each task type (`copywriting`, `code`, …) has its own ordered chain of `provider:model` targets, plus a `default` chain.
+- **Failover**: HTTP 429 (quota), 5xx, timeouts, connection errors, unknown models, missing or invalid API keys → next target. A genuinely malformed request (other HTTP 400s) stops immediately instead of burning through every provider.
+- **Rate-limit cooldown**: a target that returned 429 is skipped until its `Retry-After` (or 60 s) expires.
+- **Attempt log**: every result says which targets were tried and why each failed.
 - **One small dependency** (`httpx`); providers are ~20 lines each, easy to extend.
 
 ## Install
