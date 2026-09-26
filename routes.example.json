@@ -1,0 +1,6 @@
+{
+  "default":     ["gemini:gemini-2.5-flash", "openrouter:meta-llama/llama-3.3-70b-instruct", "ollama:qwen3:8b"],
+  "copywriting": ["gemini:gemini-2.5-flash", "ollama:qwen3:8b"],
+  "code":        ["openrouter:qwen/qwen-2.5-coder-32b-instruct", "ollama:qwen3:8b"],
+  "cheap":       ["ollama:qwen3:8b", "gemini:gemini-2.5-flash"]
+}

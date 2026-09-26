@@ -1,0 +1,22 @@
+[project]
+name = "multi-llm-router"
+version = "0.1.0"
+description = "Route LLM calls by task type across Gemini, Ollama and OpenRouter with automatic failover on quota limits and outages"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "Levent Çeliksan"}]
+dependencies = ["httpx>=0.25"]
+
+[project.scripts]
+llm-router = "llm_router.cli:main"
+
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["llm_router"]
+
+[tool.pytest.ini_options]
+markers = ["ollama: needs a local Ollama server with a model pulled (default qwen3:8b, override with OLLAMA_TEST_MODEL)"]
