@@ -2,7 +2,7 @@
 
 Route LLM calls **by task type** across **Gemini**, **OpenRouter** and **local Ollama models**, with **automatic failover** when a provider hits its quota, times out, is down, or has a bad key.
 
-Extracted from the orchestration layer of a 7-agent generative-AI advertising agency system I built, where copywriting, design, code and review agents each get their own model chain and most heavy work runs on local models to keep API costs low.
+A small standalone implementation of the routing-and-failover approach I use in a 7-agent generative-AI advertising agency system, where each agent type gets its own model chain and most heavy work runs on local models to keep API costs low. This repo is written from scratch as an independent tool; it does not contain code from that project.
 
 ## Features
 - **Task-based routing** — each task type (`copywriting`, `code`, …) has its own ordered chain of `provider:model` targets, plus a `default` chain.
