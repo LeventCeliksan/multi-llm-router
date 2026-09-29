@@ -1,5 +1,7 @@
 # multi-llm-router
 
+[![tests](https://github.com/LeventCeliksan/multi-llm-router/actions/workflows/tests.yml/badge.svg)](https://github.com/LeventCeliksan/multi-llm-router/actions/workflows/tests.yml)
+
 Route LLM calls **by task type** across **Gemini**, **OpenRouter** and **local Ollama models**, with **automatic failover** when a provider hits its quota, times out, is down, or has a bad key.
 
 A small standalone implementation of the routing-and-failover approach I use in a 7-agent generative-AI advertising agency system, where each agent type gets its own model chain and most heavy work runs on local models to keep API costs low. This repo is written from scratch as an independent tool; it does not contain code from that project.
